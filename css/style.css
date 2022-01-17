@@ -1,0 +1,235 @@
+:root {
+    --orange: #ff8000;
+    --mainBackground: #fff;
+    --category: #ffdabb;
+    --unactive: #000;
+    --mainGray: #666;
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('../fonts/lato-bold.woff2') format('woff2'),
+         url('../fonts/lato-bold.woff') format('woff'),
+         url('../fonts/lato-bold.eot') format('eot'),
+         url('../fonts/lato-bold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/lato-light.woff2') format('woff2'),
+         url('../fonts/lato-light.woff') format('woff'),
+         url('../fonts/lato-light.eot') format('eot'),
+         url('../fonts/lato-bold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'camptonbold';
+    src: url('../fonts/camptonbold-webfont.woff2') format('woff2'),
+         url('../fonts/camptonbold-webfont.woff') format('woff');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--mainBackground);
+    font-size: 56px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.camptonBold{
+    font-family: 'camptonbold', Helvetica, sans-serif;
+}
+
+.latoBold{
+    font-family: 'Lato-Bold', Helvetica, sans-serif;
+}
+
+.latoLight{
+    font-family: 'Lato-Light', Helvetica, sans-serif;
+}
+
+.container{
+    display: flex;
+    position: relative;
+    width: 80vw;
+    height: 40vh;
+    background-color: var(--mainBackground);
+    margin: 3rem auto 6rem auto;
+    font-size: 2rem;
+}
+
+.plakat-left{
+    display: none;
+}
+
+.tytul-right, .tytul-left{
+    padding-left: 1rem;
+    left: 0%;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    text-align: right;
+    text-transform: uppercase;
+    transform: scale(-1, -1);
+}
+
+
+.opis-right{
+    display: flex;
+    position: absolute;
+    background-color: var(--category);
+    width: 100%;
+    height: 90%;
+    left: 10%;
+    top: 10%;
+    margin: auto auto;
+    z-index: 0;
+    text-align: center;
+    font-size: smaller;
+    overflow: hidden;
+}
+
+.opis-right-text{
+    margin: auto 12%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+@media all and (min-width: 880px){
+    .container {
+        padding: 10vh 1rem;
+        font-size: 2rem;
+    }
+
+    .plakat-left{
+        display: flex;
+        position: absolute;
+        width: 40%;
+        height: auto;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        padding-left: 10%;
+        z-index: 2;
+    }
+
+    .opis-right{
+        width: 50%;
+        left: 50%;
+    }
+
+    .opis-right-text{
+        margin: auto 15%;
+        padding: 0px 8px;
+        font-size: 1.7rem;
+    }
+
+    .plakat-left img{
+        top: 0%;
+        left: -5%;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .tytul-right{
+        display: flex;
+        position: absolute;
+        width: 5%;
+        left: 54%;
+        top: 0%;
+        padding-left: 2rem;
+        font-size: 4rem;
+        z-index: 3;
+    }
+}
+
+.opis-left{
+    display: flex;
+    position: absolute;
+    background-color: var(--category);
+    width: 45%;
+    height: 90%;
+    left: 13.3%;
+    top: 10%;
+    margin: auto auto;
+    padding: 0rem 2rem;
+    z-index: 0;
+    text-align: center;
+    font-size: smaller;
+    overflow: hidden;
+}
+.opis-left-text{
+    margin: auto 15%;
+    padding: 0px 8px;
+    font-size: 1.7rem;
+}
+.plakat-right{
+    display: flex;
+    position: absolute;
+    width: 40%;
+    height: auto;
+    top: 10%;
+    left: 62%;
+    padding: 0;
+    padding-right: 10%;
+    z-index: 2;
+}
+
+.plakat-right img{
+    top: 0%;
+    left: -5%;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.tytul-left{
+    display: flex;
+    position: absolute;
+    width: 5%;
+    left: 54%;
+    top: 0%;
+    padding-left: 2rem;
+    font-size: 4rem;
+    z-index: 3;
+}
