@@ -88,6 +88,11 @@ table {
     font-family: 'Lato-Light', Helvetica, sans-serif;
 }
 
+/* Main control */
+.container_top{
+    padding-top: 10vh;
+}
+
 .container{
     display: flex;
     position: relative;
@@ -204,8 +209,6 @@ table {
 
 }
 
-
-
 @media all and (max-width: 1080px) {
     .container{
         width: 100vw;
@@ -256,4 +259,88 @@ table {
     .tytul-left {
         left: 83%;
     }
+}
+
+/* Menu */
+.hamburger{
+    display: none;
+}
+
+.top_menu {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--mainBackground);
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+    text-decoration: none;
+}
+
+.top_menu_group{
+    margin: auto;
+    position: relative;
+    width: fit-content;
+}
+
+.topnav, .myLinksoff {
+    margin: auto;
+    overflow: hidden;
+    float: left;
+    background-color: var(--mainBackground);
+    width: 10rem;
+    z-index: 4;
+    text-decoration: none;
+    text-align: center;
+}
+.myLinksoff{
+    width: 15rem;
+}
+.topnav a {
+    float: left;
+    margin: auto;
+    color: var(--unactive);
+    padding: 14px 0px;
+    width: 10rem;
+    height: 2rem;
+    font-size: 17px;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+}
+
+.topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.topnav a:hover {
+    background-color: var(--category);
+    color: var(--unactive);
+}
+
+.logo{
+    background: none;
+    color: none;
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 7rem;
+}
+.logo_img {
+    top: 0.3rem;
+    width: 7rem;
+    position: relative;
+}
+.logo a:hover{
+    background-color: none;
+}
+.logo_img a:hover{
+    background-color: none;
+}
+.menu_item{
+    top: 0.8rem;
 }
