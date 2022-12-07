@@ -39,12 +39,12 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+menu, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 10px;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -87,6 +87,145 @@ table {
 .latoLight{
     font-family: 'Lato-Light', Helvetica, sans-serif;
 }
+
+/* Menu szczegóły */
+.menu-icon{
+    width: 30px;
+    display: none;
+}
+
+img.logo-img {
+    width: 1.5em;
+}
+
+nav.top_menu {
+    display: flex;
+    background-color: var(--mainBackground);
+    justify-content: space-between;
+    align-items: center;
+    height: 4vh;
+    padding: 1rem;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    z-index: 4;
+}
+
+ul.top_menu_group{
+    margin: auto;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 14vh;
+    justify-content: space-around;
+}
+
+li.topnav{
+    height: 14vh;
+}
+
+a.menu_item{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--unactive);
+    position: relative;
+    padding: 14px 0px;
+    float: left;
+    margin: auto;
+    width: 10rem;
+    height: 8vh;
+    text-align: center;
+    transition: .3s ease-in-out;
+}
+
+.burger{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.topnav a:hover {
+    background-color: var(--category);
+    color: var(--unactive);
+    transition: .3s ease-in-out;
+}
+
+img.line{
+    width: 3em;
+    height: .3em;
+    background-color: transparent;
+    margin: .6em;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+ }
+ 
+ @media only screen and (max-width: 1000px){
+    .menu-icon{
+        display: block;
+        margin: 0 0 0 auto;
+        padding-right: .5em;
+        transition: .3s ease-in-out;
+    }
+    .myLinksoff{
+        display: none;
+    }
+    .burger{
+        margin: 0 0 0 auto;
+        display: block;
+        transition: .3s ease-in-out;
+    }
+
+    .burger:hover{
+        transform: rotate(360deg);
+        transition: .3s ease-in-out;
+    }
+  
+    ul.top_menu_group{
+        position: fixed;
+        right: 0;
+        top: 7vh;
+        background-color: var(--category);
+        width: 40%;
+        height: 70vh;
+        flex-direction: column;
+        text-align: center;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        transform: translate(100%);
+        transition: .3s ease-in-out;
+        z-index: 4;
+    }
+    
+    a.menu_item{
+        margin-top: 4vh;
+        width: 100%;
+        height: 3vh;
+        text-align: center;
+    }
+
+    .topnav a:hover {
+        background-color: var(--orange);
+        color: var(--unactive);
+    }
+
+    ul.active{
+        transform: translate(0%);
+        transition: .3s ease-in-out;
+    }
+}
+@media only screen and (max-width: 360px){
+    ul.top_menu_group{
+        width: 100%;
+    }
+}
+
+
+
+/* koniec menu */
+
+
 
 /* Main control */
 .container_top{
@@ -141,7 +280,7 @@ table {
 
 .opis-right-text, .opis-left-text{
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1em;
 }
 .opis-right-text{
     margin: auto 12%;
@@ -163,7 +302,7 @@ table {
     z-index: 3;
 }
 
-@media all and (min-width: 1080px) {
+@media all and (min-width: 1080px) {    
     .plakat-left, .plakat-right {
         display: flex;
         position: absolute;
@@ -181,16 +320,16 @@ table {
         left: 62%;
         padding-right: 10%;
     }
-    .plakat-left img, .plakat-right img {
+    img.plakat-left, img.plakat-right{
         top: 0%;
         position: relative;
         width: 100%;
         height: auto;
     }
-    .plakat-left img{
+    img.plakat-left{
         left: 28%;
     }
-    .plakat-right img{
+    img.plakat-right{
         left: -5%;
     }
 
@@ -223,7 +362,7 @@ table {
         right: 2%;
     }
     .opis-right-text, .opis-left-text{
-        font-size: 2rem;
+        font-size: .7em;
     }
     .tytul-right, .tytul-left{
         top: 3%;
@@ -241,14 +380,14 @@ table {
     .container {
         width: 100%;
         height: 25vh;
-        margin: 2px auto 2px auto;
+        margin: .25em auto .25em auto;
     }
     .opis-right, .opis-left{
         width: 78%;
         left: -2rem;
     }
     .opis-right-text, .opis-left-text{
-        font-size: 1.2rem;
+        font-size: .7em;
         margin: auto 12%;
         padding: 1% 1% 1% 1%;
     }
@@ -261,86 +400,3 @@ table {
     }
 }
 
-/* Menu */
-.hamburger{
-    display: none;
-}
-
-.top_menu {
-    display: block;
-    margin: 0;
-    overflow: hidden;
-    background-color: var(--mainBackground);
-    width: 100%;
-    position: fixed;
-    z-index: 4;
-    text-decoration: none;
-}
-
-.top_menu_group{
-    margin: auto;
-    position: relative;
-    width: fit-content;
-}
-
-.topnav, .myLinksoff {
-    margin: auto;
-    overflow: hidden;
-    float: left;
-    background-color: var(--mainBackground);
-    width: 10rem;
-    z-index: 4;
-    text-decoration: none;
-    text-align: center;
-}
-.myLinksoff{
-    width: 15rem;
-}
-.topnav a {
-    float: left;
-    margin: auto;
-    color: var(--unactive);
-    padding: 14px 0px;
-    width: 10rem;
-    height: 2rem;
-    font-size: 17px;
-    text-decoration: none;
-    text-align: center;
-    position: relative;
-}
-
-.topnav a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.topnav a:hover {
-    background-color: var(--category);
-    color: var(--unactive);
-}
-
-.logo{
-    background: none;
-    color: none;
-    position: relative;
-    display: block;
-    margin: auto;
-    width: 7rem;
-}
-.logo_img {
-    top: 0.3rem;
-    width: 7rem;
-    position: relative;
-}
-.logo a:hover{
-    background-color: none;
-}
-.logo_img a:hover{
-    background-color: none;
-}
-.menu_item{
-    top: 0.8rem;
-}

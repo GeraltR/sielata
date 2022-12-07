@@ -9,35 +9,37 @@
     <title>SieLata</title>
     <link rel="shortcut icon" href="sielata_ico.png">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
 </head>
 
 <body>
-    <div class="top_menu latoBold">
-        <div class="top_menu_group">
-            <div class="topnav">
+    <nav class="top_menu latoBold">
+        <ul class="top_menu_group">
+            <li class="topnav">
                 <a href="#onas" class="menu_item">O nas</a>
-            </div>
-            <div class="topnav">
+            </li>
+            <li class="topnav">
                 <a href="#zawody" class="menu_item">Zawody</a>
-            </div>
-            <div class="myLinksoff">
+            </li>
+            <li class="myLinksoff">
                 <a href="#" class="logo">
-                    <img src="img/sielata.gif" alt="SieLata" class="logo_img" />
+                    <img class="logo-img" src="img/sielata.gif" alt="SieLata"/>
                 </a>
-            </div>
-            <div class="topnav">
-                <a href="#sponsorzy" class="menu_item">Sponsorzy</a>
-            </div>
-            <div class="topnav">
+            </li>
+            <li class="topnav">
+                <a href="#partnerzy" class="menu_item">Partnerzy</a>
+            </li>
+            <li class="topnav">
                 <a href="#kontakt" class="menu_item">Kontakt</a>
-            </div>
-        </div>
+            </li>
+        </ul>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="hamburger" onclick="myFunction()">
+        <div class="burger">
+            <img class="menu-icon" src="img/sielata_ico.png" alt="SieLata">
+        </div>
+        <!-- <a href="javascript:void(0);" class="hamburger" onclick="myFunction()">
             <i class="fa fa-bars"></i>
-        </a>
-    </div>
+        </a> -->
+    </nav>
     <!-- <div class="camptonBold">SieLata</div>
     <div class="latoLight">Lato Light</div>
     <div class="latoBold">Lato Bold</div> -->
@@ -74,5 +76,13 @@
         </div>
     </div>
 </body>
+<script>
+    const mobileNav = document.querySelector('.top_menu_group');
+    const burgerIcon = document.querySelector('.burger');
+    burgerIcon.addEventListener('click', function(){
+        mobileNav.classList.toggle('active');
+        burgerIcon.classList.toggle('active');
+    })
+</script>
 <script type="text/javascript" src="js/sielata.js">
 </html >
